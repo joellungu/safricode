@@ -8,16 +8,16 @@ class ClientController extends GetxController with StateMixin<List> {
     //
     change([], status: RxStatus.loading());
     //
-    List contacts = box.read("contacts") ?? [];
+    List clients = box.read("clients") ?? [];
     //
-    change(contacts, status: RxStatus.success());
+    change(clients, status: RxStatus.success());
   }
 
   bool saveConatct(Map c) {
-    List contacts = box.read("contacts") ?? [];
+    List clients = box.read("clients") ?? [];
     //
-    contacts.add(c);
-    box.write("contacts", contacts);
+    clients.add(c);
+    box.write("clients", clients);
     return true;
   }
 }
